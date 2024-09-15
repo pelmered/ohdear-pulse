@@ -69,7 +69,7 @@ class OhDearUptimePulseCardComponent extends Card
         $this->performanceRecords = $performanceRecords;
 
         $this->maxPerformanceRecord = (int) ceil(collect($this->performanceRecords)
-            ->max(fn (array $dataPoint) => $dataPoint[1])) + 10;
+            ->max(fn (array $dataPoint) => (float) $dataPoint[1])) + 10;
     }
 
     protected function getLabels(): array
